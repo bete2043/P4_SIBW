@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">Registrar Usuario</h2>
+        <form class="registration-form" action="registro.php" method="post">
+            <label class="form-label" for="username">Nombre de Usuario:</label>
+            <input class="form-input" type="text" id="username" name="username" required>
+
+            <label class="form-label" for="password">Contraseña:</label>
+            <input class="form-input" type="password" id="password" name="password" required>
+
+            <label class="form-label" for="gmail">Gmail:</label>
+            <input class="form-input" type="email" id="gmail" name="gmail" required>
+
+            <button class="form-button" type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>

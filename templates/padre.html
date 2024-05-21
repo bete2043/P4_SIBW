@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            {% block titulo %}
+
+            <p>Parte del titulo y enlaces</p>
+
+            {% endblock %}
+        
+        </head>
+
+<div class="wrapper"> <!-- Contenedor principal que usa CSS Grid para su disposición interna -->
+    <div class="box a"> <!-- Sección de encabezado que incluye una imagen y un menú de navegación -->
+        <img src="../imagenes/imagen.png" width="175" height="125" > <!-- Imagen del logo o similar -->
+        <div class="centro"> <!-- Contenedor centrado para el título y el menú -->
+            <span class="titulo"><strong>AVENTURAS CAZORLA</strong></span> <!-- Título de la página -->
+            <div class="menus"> <!-- Contenedor para los elementos del menú -->
+                <strong><a class="menu" id="menu1" href="../portada.php">Inicio</a></strong> <!-- Opción del menú -->
+                <strong><a class="menu" id="menu2"></class>Actividades</a></strong><!-- Opción del menú -->
+                <strong><a class="menu" id="menu3">Reservas</a></strong> <!-- Opción del menú -->
+            </div>
+        </div>
+        <!-- Botón para mostrar el formulario de inicio de sesión -->
+        {% if info['usuario_iniciado'] == false %}
+            <div class="inicio-sesion">
+                <form action="login.php">
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        {% endif %}
+
+        {% if info['usuario_iniciado'] %}
+
+    <div class="modificarsalir">
+        <form action="modificar.php">
+            <button type="submit">Modificar datos</button>
+        </form>
+        
+        <form action="logout.php">
+            <button type="submit">Cerrar Sesion</button>
+        </form>
+    </div>
+    
+    {% endif %}
+
+
+    
+        {% if info['usuario_iniciado'] %}
+        <div class="usuario">
+            <strong>Usuario: {{ info['username']}}</strong>
+            <strong>Rol: {{ info['rol']}}</strong> 
+        </div>
+        {% else %}
+        <div class="usuario">
+            <strong>Anonimo</strong>
+        </div>
+        {% endif %}
+    
+    {% if info['rol'] == 'super' %}
+        <div class="modroles">
+            <form action="roles.php">
+                <button type="submit">Modificar roles</button>
+            </form>
+        </div>
+    {% endif %}
+
+    {% if info['rol'] == 'moderador' %}
+        <div class="leercoment">
+            <form action="comentario.php">
+                <button type="submit">Leer comentarios</button>
+            </form>
+        </div>
+
+    {% endif %}
+
+    {% if info['rol'] == 'gestor' %}
+
+        <div class="gestor">
+            <form action="gestor.php">
+                <button type="submit">Añadir actividades</button>
+            </form>
+            
+            <form action="eliminar_actividad.php">
+                <button type="submit">Eliminar actividades</button>
+            </form>
+        
+            <form action="editar_actividad.php">
+                <button type="submit">Editar actividades</button>
+            </form>
+        
+            <form action="actividades.php">
+                <button type="submit">Mostrar actividades</button>
+            </form>
+        </div>
+        
+
+    {% endif %}
+
+
+
+    </div>    
+
+    <body>
+    {% block cuerpo %}
+
+            <p>Parte del cuerpo</p>
+
+    {% endblock %}
+
+    <div class="box c"> <!-- Sección con enlaces útiles para el visitante: clima, lugares para visitar, comer, dormir, aparcar y acampar -->
+        <a href="https://www.eltiempo.es/cazorla.html">¿Qué tiempo va a hacer?</a>
+        <a href="https://www.tuscasasrurales.com/blog/sierra-de-cazorla/">Lugares cercanos para visitar</a>
+        <a href="https://www.mochileandoporelmundo.com/donde-comer-en-cazorla/">Lugares para comer</a>
+        <a href="https://www.turismoencazorla.com/dondealojarse.php">Lugares para dormir</a>
+        <a href="https://totalrenting.es/aparcamiento-parkings/donde-aparcar-en-cazorla/">Lugares donde aparcar</a>
+        <a href="https://www.turismoencazorla.com/camping.php">Lugares donde acampar</a>
+        
+    </div>
+        <div class="box d"><!-- Sección de pie de página con información del propietario y contacto -->
+            <div class="propietario">
+                <strong>©2024-JAIME PARRA JIMENEZ</strong>
+            </div>
+
+            <div class="contacto">
+                <strong>Teléfono de contacto: 674982345</strong>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

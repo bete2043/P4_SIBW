@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar actividades</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <div class="form-container1">
+        <div class="inicio-sesion1">
+            <h2 class="form-title1">Eliminar actividad</h2>
+
+            {% if error_message %}
+            <div class="error-message1">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form class="form1" action="eliminar_actividad.php" method="post">
+
+                <label class="form-labe1l" for="nombre">Introduzca el nombre de la actividad que desea eliminar:</label>
+                <input class="form-input1" type="text" id="nombre" name="nombre" required>
+
+                <button class="form-button1" type="submit">Eliminar Actividad</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

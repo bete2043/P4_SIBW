@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir actividades</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+
+    <div id="formularioIniciarSesion" class="formulario-container">
+        <div class="inicio-sesion">
+            <h2 class="formulario-titulo">Añadir actividad</h2>
+
+            {% if error_message %}
+            <div class="error-mensaje">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form action="gestor.php" method="post" class="formulario">
+                <p class="formulario-instruccion">Introduzca los nuevos datos</p>
+
+                <label for="precio" class="formulario-label">Precio:</label>
+                <input type="text" id="precio" name="precio" required class="formulario-input">
+
+                <label for="fecha" class="formulario-label">Fecha:</label>
+                <input type="text" id="fecha" name="fecha" required class="formulario-input">
+
+                <label for="actividad" class="formulario-label">Actividad:</label>
+                <input type="text" id="actividad" name="actividad" required class="formulario-input">
+
+                <label for="descripcion" class="formulario-label">Descripcion:</label>
+                <input type="text" id="descripcion" name="descripcion" required class="formulario-input">
+
+                <label for="material_necesario" class="formulario-label">Material necesario:</label>
+                <input type="text" id="material_necesario" name="material_necesario" required class="formulario-input">
+
+                <label for="enlace_consejos" class="formulario-label">Enlace de los consejos:</label>
+                <input type="text" id="enlace_consejos" name="enlace_consejos" required class="formulario-input">
+
+                <label for="portada" class="formulario-label">Foto de la portada:</label>
+                <input type="text" id="portada" name="portada" required class="formulario-input">
+
+                <label for="foto1" class="formulario-label">Primera foto de la actividad:</label>
+                <input type="text" id="foto1" name="foto1" required class="formulario-input">
+
+                <label for="foto2" class="formulario-label">Segunda foto de la actividad:</label>
+                <input type="text" id="foto2" name="foto2" required class="formulario-input">
+
+                <label for="id" class="formulario-label">Id de la actividad:</label>
+                <input type="text" id="id" name="id" required class="formulario-input">
+
+                <button type="submit" class="formulario-button">Guardar Actividad</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

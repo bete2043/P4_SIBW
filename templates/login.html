@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+    
+<body>
+
+    <div id="formularioIniciarSesion" class="formulario-iniciar-sesion">
+        <div class="inicio-sesion">
+            <h2 class="titulo-inicio-sesion">Iniciar sesión</h2>
+            <form action="login.php" method="post" class="form-iniciar-sesion">
+                <label for="username" class="label-username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required class="input-username">
+                <label for="password" class="label-password">Contraseña:</label>
+                <input type="password" id="password" name="password" required class="input-password">
+                <button type="submit" class="boton-iniciar-sesion">Iniciar sesión</button>
+            </form>
+            <p class="mensaje-registro">¿No tienes una cuenta? <a href="registro.php" class="enlace-registro">Regístrate aquí</a></p>
+            <a href="portada.php" class="boton-cerrar">Cerrar</a> <!-- Botón para cerrar el formulario -->
+        </div>
+    </div>
+
+</body>
+</html>

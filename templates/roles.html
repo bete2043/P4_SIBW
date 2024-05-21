@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Rol de Usuario</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <h1 class="titulo-modificar-rol">Modificar Rol de Usuario</h1>
+
+    {% if error_message %}
+        <div class="mensaje-error">
+            <p>{{ error_message }}</p>
+        </div>
+    {% endif %}
+
+    {% if success_message %}
+        <div class="mensaje-exito">
+            <p>{{ success_message }}</p>
+        </div>
+    {% endif %}
+
+    <table class="tabla-usuarios">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Gmail</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.username }}</td>
+                    <td>{{ usuario.gmail }}</td>
+                    <td>{{ usuario.rol }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="subtitulo-actualizar-rol">Actualizar Rol</h2>
+    <form action="roles.php" method="post" class="formulario-actualizar-rol">
+        <label for="username" class="label-username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required class="input-username">
+        
+        <label for="new_role" class="label-new-role">Nuevo Rol:</label>
+        <select id="new_role" name="new_role" required class="select-new-role">
+            {% for rol in roles_disponibles %}
+                <option value="{{ rol }}">{{ rol }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit" class="boton-actualizar-rol">Actualizar Rol</button>
+    </form>
+</body>
+</html>

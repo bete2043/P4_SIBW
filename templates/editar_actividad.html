@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar actividades</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="inicio-sesion">
+            <h2 class="form-title">Editar actividad</h2>
+
+            {% if error_message %}
+            <div class="error-message">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form class="form" action="editar_actividad.php" method="post">
+
+                <label class="form-label" for="actividad">Nombre de la actividad a editar:</label>
+                <input class="form-input" type="text" id="actividad" name="actividad" required>
+
+                <p>Introduzca los nuevos datos</p>
+
+                <label class="form-label" for="precio">Precio:</label>
+                <input class="form-input" type="text" id="precio" name="precio" required>
+
+                <label class="form-label" for="fecha">Fecha:</label>
+                <input class="form-input" type="text" id="fecha" name="fecha" required>
+
+                <label class="form-label" for="descripcion">Descripcion:</label>
+                <input class="form-input" type="text" id="descripcion" name="descripcion" required>
+
+                <label class="form-label" for="material_necesario">Material necesario:</label>
+                <input class="form-input" type="text" id="material_necesario" name="material_necesario" required>
+
+                <label class="form-label" for="enlace_consejos">Enlace de los consejos:</label>
+                <input class="form-input" type="text" id="enlace_consejos" name="enlace_consejos" required>
+
+                <label class="form-label" for="portada">Foto de la portada:</label>
+                <input class="form-input" type="text" id="portada" name="portada" required>
+
+                <label class="form-label" for="foto1">Primera foto de la actividad:</label>
+                <input class="form-input" type="text" id="foto1" name="foto1" required>
+
+                <label class="form-label" for="foto2">Segunda foto de la actividad:</label>
+                <input class="form-input" type="text" id="foto2" name="foto2" required>
+
+                <label class="form-label" for="id">Id de la actividad:</label>
+                <input class="form-input" type="text" id="id" name="id" required>
+
+                <button class="form-button" type="submit">Guardar Actividad</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

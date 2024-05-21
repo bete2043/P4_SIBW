@@ -1,0 +1,718 @@
+/* /////////////////////////////////////////////////////////////// */
+/*actividad.html*/
+/* ver todas las actividades guardadas en la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    color: #333;
+}
+
+.buscar-form,
+.ver-todas-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buscar-label,
+.buscar-input,
+.buscar-button {
+    margin-right: 10px;
+}
+
+.buscar-input,
+.buscar-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.buscar-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.buscar-button:hover {
+    background-color: #0056b3;
+}
+
+.actividades-ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.actividad-item {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.actividad-titulo {
+    color: #007bff;
+    font-size: 18px;
+}
+
+.actividad-descripcion {
+    color: #333;
+    font-size: 16px;
+}
+
+.no-actividades {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.volver {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.volver-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.volver-link:hover {
+    text-decoration: underline;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN actividad.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*editar_actividad.html*/
+/* editar una actividad guardada en la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el contenedor principal */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el título */
+.form-title {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el mensaje de error */
+.error-message {
+    color: red;
+}
+
+/* Estilos para el formulario */
+.form {
+    margin-top: 20px;
+}
+
+/* Estilos para las etiquetas */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN editar_actividad.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*eliminar_actividad.html*/
+/* elimina una actividad guardada en la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el contenedor del formulario */
+.form-container1 {
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.inicio-sesion1 {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título del formulario */
+.form-title1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilos para el mensaje de error */
+.error-message1 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Estilos para las etiquetas de los campos del formulario */
+.form-label1 {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.form-input1 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* Estilos para el botón del formulario */
+.form-button1 {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN eliminar_actividad.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*gestor.html*/
+/* añadir una actividad a la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el contenedor del formulario */
+.formulario-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el título del formulario */
+.formulario-titulo {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el mensaje de error */
+.error-mensaje {
+    color: red;
+}
+
+/* Estilos para el formulario */
+.formulario {
+    margin-top: 20px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.formulario-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.formulario-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón del formulario */
+.formulario-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN gestor.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*comentario.html*/
+/* muestra todos los comentarios guardados en la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+/* Estilos para la página de comentarios */
+.titulo {
+    text-align: center;
+    color: #333;
+}
+
+.comentarios-ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comentario-item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nombre {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.comentario {
+    color: #333;
+}
+
+.no-comentarios {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN comentario.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////////////////////// */
+/*editar_comentario.html*/
+/* modifica los comentarios de la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el título */
+.titulo {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el mensaje de error */
+.error-message {
+    color: red;
+}
+
+/* Estilos para el mensaje de éxito */
+.success-message {
+    color: green;
+}
+
+/* Estilos para el párrafo del comentario previo */
+.comentario-previo {
+    margin-bottom: 20px;
+}
+
+/* Estilos para el formulario de editar comentario */
+.formulario-editar-comentario {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para la etiqueta del comentario */
+.label-comentario {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para el área de texto del comentario */
+.texto-comentario {
+    width: 100%;
+    height: 100px; /* Tamaño ajustable según sea necesario */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de guardar cambios */
+.boton-guardar-cambios {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-guardar-cambios:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el enlace de volver */
+.enlace-volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.enlace-volver:hover {
+    text-decoration: underline;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN editar_comentario.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*login.html*/
+/* iniciar sesion */
+/* /////////////////////////////////////////////////////////////// */
+/* Estilos para el contenedor del formulario de iniciar sesión */
+.formulario-iniciar-sesion {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el título del formulario */
+.titulo-inicio-sesion {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el formulario de iniciar sesión */
+.form-iniciar-sesion {
+    margin-top: 20px;
+}
+
+/* Estilos para las etiquetas de los campos */
+.label-username,
+.label-password {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.input-username,
+.input-password {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de iniciar sesión */
+.boton-iniciar-sesion {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-iniciar-sesion:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el mensaje de registro */
+.mensaje-registro {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos para el enlace de registro */
+.enlace-registro {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.enlace-registro:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón de cerrar */
+.boton-cerrar {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.boton-cerrar:hover {
+    text-decoration: underline;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN login.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*modificar.html*/
+/* modifica los datos del usuario */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el contenedor del formulario de modificar datos */
+.formulario-modificar-datos {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para el título del formulario */
+.titulo-modificar-datos {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para el mensaje de error */
+.mensaje-error {
+    color: red;
+}
+
+/* Estilos para el formulario de modificar datos */
+.form-modificar-datos {
+    margin-top: 20px;
+}
+
+/* Estilos para la información del usuario */
+.info-usuario {
+    margin-bottom: 10px;
+}
+
+/* Estilos para las etiquetas de los campos */
+.label-username,
+.label-password,
+.label-gmail {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.input-username,
+.input-password,
+.input-gmail {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de guardar cambios */
+.boton-guardar-cambios {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-guardar-cambios:hover {
+    background-color: #0056b3;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN modificar.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*roles.html*/
+/* modifica los roles de los usuarios */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el título */
+.titulo-modificar-rol {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los mensajes de error y éxito */
+.mensaje-error {
+    color: red;
+}
+
+.mensaje-exito {
+    color: green;
+}
+
+/* Estilos para la tabla de usuarios */
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabla-usuarios th, .tabla-usuarios td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.tabla-usuarios th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para el subtítulo */
+.subtitulo-actualizar-rol {
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para el formulario de actualizar rol */
+.formulario-actualizar-rol {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.label-username,
+.label-new-role {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-username,
+.select-new-role {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.boton-actualizar-rol {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-actualizar-rol:hover {
+    background-color: #0056b3;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN roles.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*registro.html*/
+/* registrarse para crear un usuario en la base de datos */
+/* /////////////////////////////////////////////////////////////// */
+
+/* Estilos para el contenedor principal */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el título */
+.title {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para las etiquetas */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada */
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN registro.html*/
+/* /////////////////////////////////////////////////////////////// */

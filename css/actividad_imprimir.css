@@ -1,0 +1,126 @@
+body {
+    margin: 0px; /* Elimina margenes predeterminados */
+}
+
+.wrapper {
+    display: grid; /* Contenedor tipo grid */
+    grid-template-columns: 100px 100px 100px; /* Tres columnas de 100px */
+    background-color: #fff; /* Fondo blanco */
+    min-height: 100vh;
+}
+
+.box {
+    background-color: #fff; /* Fondo blanco */
+    color: #fff; /* Texto blanco, posible error */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 20px; /* Relleno de 20px */
+    font-size: 150%; /* Fuente 150% más grande */
+}
+
+.a {
+    display: flex; /* Disposición flex */
+    grid-column: 1 / 9; /* Ocupa columnas 1 a 8 */
+    grid-row: 1 / 4; /* Ocupa filas 1 a 3 */                    
+}
+
+.box img {
+    margin-right: 10px; /* Margen derecho en imágenes */
+}
+
+.titulo{
+    display: flex; /* Disposición flex */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    text-align: center; /* Texto centrado */
+    font-size: 150%; /* Fuente 150% más grande */
+    color: #000; /* Texto negro */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+    text-decoration: underline; /* Texto subrayado */
+}
+
+.centro {
+    display: flex; /* Disposición flex */
+    flex-direction: column; /* Columna */
+    align-items: center; /* Centrado horizontal */
+    justify-content: center; /* Centrado vertical */
+    flex-grow: 1; /* Crecimiento flexible */
+}
+
+.b {
+    grid-column: 1 / 9; /* Ocupa columnas 1 a 8 */
+    grid-row: 4 / 65; /* Ocupa filas 4 a 64 */
+    background-color: #fff; /* Fondo blanco */                 
+}
+
+.tit{
+    font-size: 200%; /* Fuente 200% más grande */
+    color: #000; /* Texto negro */
+    display: flex; /* Disposición flex */
+    justify-content: center; /* Centrado horizontal */
+}    
+
+.subtit{
+    font-size: 100%; /* Fuente tamaño normal */
+    color: #000; /* Texto negro */
+    display: flex; /* Disposición flex */
+    flex-direction: column; /* Columna */
+    justify-content: center; /* Centrado vertical */
+    line-height: 0.25; /* Altura de línea baja */
+    max-width: 50%; /* Ancho máximo 50% */
+}  
+
+.img{
+    display: flex; /* Disposición flex */
+    flex-direction: row; /* Fila */
+    justify-content: flex-end; /* Alineado a la derecha */
+    align-items: center; /* Centrado vertical */
+}
+
+.imgytu{
+    display: flex; /* Disposición flex */
+    flex-direction: row; /* Fila */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    gap: 620px; /* Espacio entre elementos */
+}
+
+.fotos{
+    display: flex; /* Disposición flex */
+    flex-direction: column; /* Columna */
+    align-items: flex-end; /* Alineado a la derecha */
+    justify-content: flex-start; /* Alineado arriba */
+    gap: 15px; /* Espacio entre fotos */
+    margin-bottom: 10px; /* Margen inferior */
+}      
+
+.texto{
+    color: #000; /* Texto negro */
+    display: flex; /* Disposición flex */
+    flex-direction: row; /* Fila */
+    justify-content: center; /* Centrado horizontal */
+    align-items: flex-start; /* Alineado arriba */
+    gap: 200px; /* Espacio entre elementos */
+}    
+
+.exp{
+    max-width: 60%; /* Ancho máximo 60% */
+    font-size: 120%; /* Fuente 120% más grande */
+}
+
+.d {
+    grid-column: 1 / 9; /* Ocupa columnas 1 a 8 */
+    grid-row: 65; /* Ocupa fila 65 */
+    color: #000000; /* Texto negro */
+    font-size: 120%; /* Fuente 120% más grande */
+}     
+.propietario{
+    display: flex; /* Usa Flexbox para el contenedor */
+    flex-direction: column; /* Organiza los hijos en columna */
+    align-items: center; /* Centra hijos horizontalmente */             
+}
+.contacto{
+    display: flex; /* Usa Flexbox para el contenedor */
+    flex-direction: column; /* Organiza los hijos en columna */
+    justify-content: flex-end; /* Alinea hijos al final del contenedor verticalmente */
+    align-items: center; /* Centra hijos horizontalmente */
+}

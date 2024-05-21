@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+        {% block titulo %}
+            <title>AventurasCazorla</title> <!-- Título de la página, que aparece en la pestaña del navegador -->
+            <link rel="stylesheet" href="../css/portada.css"> <!-- Vincula una hoja de estilos CSS externa para el diseño de la página -->
+        {% endblock %}
+
+        {% block cuerpo %}
+            <div class="box b"> <!-- Sección para destacar actividades al aire libre con enlaces a más información -->
+
+                {% for act in id %}
+                    <div class="actividad">
+                        <a href="../actividad.php?ev={{act.id}}"><img src="../imagenes/{{act.portada}}" width="280" height="170" class="bordeado"></a>
+                        <strong><p>{{act.actividad}}</p></strong>
+                    </div> 
+                    {% endfor %}
+                
+            </div>
+
+            {% endblock %}
+        
+        
+

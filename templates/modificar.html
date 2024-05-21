@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar datos</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+    
+<body>
+
+    <div id="formularioModificarDatos" class="formulario-modificar-datos">
+        <div class="inicio-sesion">
+            <h2 class="titulo-modificar-datos">Modificar Datos</h2>
+
+            {% if error_message %}
+            <div class="mensaje-error">
+                {{ error_message }}
+            </div>
+            {% endif %}
+
+            <form action="modificar.php" method="post" class="form-modificar-datos">
+                <p class="info-usuario">Usuario: {{nombre}}</p>
+
+                <p>Introduzca los nuevos datos</p>
+
+                <label for="username" class="label-username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required class="input-username">
+
+                <label for="password" class="label-password">Contraseña:</label>
+                <input type="password" id="password" name="password" required class="input-password">
+                    
+                <label for="gmail" class="label-gmail">Correo:</label>
+                <input type="gmail" id="gmail" name="gmail" required class="input-gmail">
+
+                <button type="submit" class="boton-guardar-cambios">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

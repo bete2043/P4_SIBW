@@ -1,0 +1,105 @@
+{% extends "padre.html" %}
+
+        {% block titulo %}
+                <title>AventurasCazorla</title> <!-- Título de la página, que aparece en la pestaña del navegador -->
+                <link rel="stylesheet" href="../css/actividad.css"> <!-- Vincula una hoja de estilos CSS externa para el diseño de la página -->
+                <script src="../javascript/actividad.js"></script> <!-- Vincula al archivo javascript externo para el diseño de la página -->
+        {% endblock %}
+        
+        {% block cuerpo %}
+                <div class="box b">
+                    <!-- Título de la actividad -->
+                    <strong><div class="tit">{{ evento['actividad'] }}</div></strong>
+                    
+                    <!-- Subtítulo con fecha y precio -->
+                    <div class="subtit">
+                        <p>Fecha: {{ evento['fecha'] }}</p>
+                        <p>Precio: {{ evento['precio'] }}€</p>
+                    </div>
+                    
+                    <!-- Descripción detallada de la actividad -->
+                    <div class="texto">
+                        <div class="exp">
+                            <p>
+                                {{ evento['descripcion'] }}
+                            </p>
+    
+                            <p>
+                                {{ evento['material_necesario'] }}
+                            </p>
+    
+                            <p>
+                                Si quiere saber mas sobre la actividad pulse este enlace:<a style="color: rgb(47, 28, 118);" href="{{ evento['enlace_consejos'] }}">Saber más sobre {{ evento['actividad'] }}.</a>
+                            </p>
+                        </div>
+                        
+                        <!-- Imágenes relacionadas con la actividad -->
+                        <div class="fotos">
+                                <img src="{{ fotos['ruta'] }}" width="150" height="175">
+                                <img src="{{ fotos['ruta2']}}" width="150" height="175">
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Botones para compartir en redes sociales o imprimir la información de la actividad -->
+                    <div class="botones">
+                        <a class="redes" id="tw" href="https://twitter.com/?lang=es"><img src="../imagenes/twitter.png" width="50" height="50"></a>
+                        <a class="redes" id="fb" href="https://www.facebook.com/?locale=es_ES"><img src="../imagenes/facebook.png" width="50" height="50"></a>
+                        <a class="redes" id="imp" href="../actividad_imprimir.php"><img src="../imagenes/imprimir.png" width="50" height="50"></a>
+                        <a class="redes" id="cmt"><img src="../imagenes/comentar.png" width="50" height="50"></a></button>
+                    </div>
+
+                    {% if info['rol'] != NULL %}
+                        <div id="panelComentarios">
+                            <div class = "mostrarcoment">
+                                {% for comentario in comentarios %}
+                                    <div class="comentario">
+                                        <strong>{{ comentario['nombre'] }}</strong>
+                                        <p>{{ comentario['comentario'] }}</p>
+                                        
+                                        <div class="info-adicional">
+                                            <em>Correo: {{ comentario['email'] }}</em><br>
+                                            <em>Fecha: {{ comentario['fecha'] }} </em>
+                                            {% if  comentario['editado']  %}
+                                                <em>Mensaje editado por el moderador</em>
+                                            {% endif %}
+                                        </div>
+
+                                        <form action="editar_comentario.php" method="POST" style="display: inline;">
+                                            <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
+                                            <input type="hidden" name="act_id" value="{{idEv}}">
+                                            <button type="submit">
+                                                <img src="../imagenes/editar.png" width="30" height="30" alt="Editar comentario">
+                                            </button>
+                                        </form>
+                                        
+                                        <form action="borrar_comentario.php" method="POST" style="display: inline;">
+                                            <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
+                                            <input type="hidden" name="act_id" value="{{idEv}}">
+                                            <button type="submit">
+                                                <img src="../imagenes/eliminar.png" width="30" height="30" alt="Eliminar comentario">
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            
+                            <div id="comentarios" class="comentarios-container">                           
+                                <button id="cerrarPanel" class="cerrar-panel">X</button>
+                                <form action="actividad.php?ev={{idEv}}"  id="formularioComentario" method="POST">
+                                    <a class="centro2">
+                                        <input type="text" id="nombreUsuario" name="nombre" autocomplete="off" placeholder="Nombre" required value="{{info['username']}}"readonly><br>
+                                        <input id="emailUsuario" name="email" type="email" autocomplete="off" placeholder="E-mail" required value="{{info['email']}}"readonly><br>
+                                        <textarea id="textoComentario" name="comentario" placeholder="Escribe tu comentario aquí..." required></textarea>
+                                    </a>
+                                    <button type="submit"><img src="../imagenes/enviar.png" id="env"></button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+
+                </div>
+        {% endblock %}

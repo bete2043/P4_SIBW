@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Comentario</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <h1 class="titulo">Editar Comentario</h1>
+    
+    {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+    {% endif %}
+    
+    {% if success_message %}
+        <div class="success-message">{{ success_message }}</div>
+    {% endif %}
+
+    <p class="comentario-previo">Comentario previo: {{comentario_previo}}</p>
+    
+    
+    <form method="POST" action="editar_comentario.php" class="formulario-editar-comentario">
+        
+        <label for="texto" class="label-comentario">Comentario:</label>
+        <textarea id="texto" name="texto" required class="texto-comentario">{{ comentario[texto] }}</textarea>
+
+        <input type="hidden" id="comentario_id" name="comentario_id" value="{{comentario_id}}"><br>
+        <input type="hidden" id="act_id" name="act_id" value="{{act_id}}"><br>
+
+        
+        <button type="submit" class="boton-guardar-cambios">Guardar Cambios</button>
+    </form>
+    
+    <a href="actividad.php?ev={{act_id}}" class="enlace-volver">Volver</a>
+
+</body>
+</html>

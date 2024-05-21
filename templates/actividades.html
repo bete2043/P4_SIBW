@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividades</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Actividades</h1>
+        
+        <form action="buscar.php" method="GET" class="buscar-form">
+            <label for="query" class="buscar-label">Buscar actividades:</label>
+            <input type="text" id="query" name="query" placeholder="Ingrese nombre o descripción" required class="buscar-input">
+            <button type="submit" class="buscar-button">Buscar</button>
+        </form>
+
+        <form action="buscar.php" method="GET" class="ver-todas-form">
+            <button type="submit" class="ver-todas-button">Ver todas las actividades</button>
+        </form>
+        
+        <div class="actividades-lista">
+            {% if actividades %}
+                <ul class="actividades-ul">
+                    {% for actividad in actividades %}
+                        <li class="actividad-item">
+                            <strong class="actividad-titulo">{{ actividad.actividad }}</strong>
+                            <p class="actividad-descripcion">{{ actividad.descripcion }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="no-actividades">No hay ninguna actividad.</p>
+            {% endif %}
+        </div>
+
+        <p class="volver"><a href="portada.php" class="volver-link">Volver</a></p>
+    </div>
+</body>
+</html>

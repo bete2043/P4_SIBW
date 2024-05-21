@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <h1 class="titulo">Comentarios</h1>
+    
+    {% if comentarios %}
+        <ul class="comentarios-ul">
+            {% for comentario in comentarios %}
+                <li class="comentario-item">
+                    <strong class="nombre">{{ comentario.nombre }}</strong>: <span class="comentario">{{ comentario.comentario }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-comentarios">No hay comentarios disponibles.</p>
+    {% endif %}
+</body>
+</html>
