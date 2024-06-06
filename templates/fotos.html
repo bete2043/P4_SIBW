@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Imagen con Hashtag</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <div class="container">
+        {% for e in errores %}
+            <p style="color: #f00;">{{e}}</p>
+            <a href="fotos.php">Volver a subir imágenes</a>
+        {% endfor %}
+        
+        {% if imagen %}
+            <p>La imagen está guardada en <a href="{{imagen}}">{{imagen}}</a>.</p> 
+            <img src="{{imagen}}" />
+            <a href="fotos.php">Volver a subir imágenes</a>
+        {% else %}
+    
+            <form action="fotos.php" method="post" enctype="multipart/form-data">
+                Imagen a subir: <input type="file" name="imagen" /><br>
+                <br>
+                <label for="hashtag">Hashtag:</label>
+                <input type="text" name="hashtag" id="hashtag" required>
+                <br>
+                <input type="submit" value="Mandar imagen" />
+    
+            </form>
+            <a href="galeria.php" class="botones"><button>Ver Galería</button></a>
+            <a href="portada.php" class="botones"><button>Cerrar</button></a> 
+        {% endif %}
+    </div>
+</body>
+</html>
+

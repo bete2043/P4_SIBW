@@ -8,24 +8,24 @@
 <body>
     <h1 class="titulo">Editar Comentario</h1>
     
-    {% if error_message %}
-        <div class="error-message">{{ error_message }}</div>
-    {% endif %}
-    
-    {% if success_message %}
-        <div class="success-message">{{ success_message }}</div>
-    {% endif %}
-
     <p class="comentario-previo">Comentario previo: {{comentario_previo}}</p>
     
     
     <form method="POST" action="editar_comentario.php" class="formulario-editar-comentario">
         
-        <label for="texto" class="label-comentario">Comentario:</label>
-        <textarea id="texto" name="texto" required class="texto-comentario">{{ comentario[texto] }}</textarea>
+        <label for="texto" class="label-comentario">Comentario a editar:</label>
+        <textarea id="texto" name="texto" required class="texto-comentario"></textarea>
 
         <input type="hidden" id="comentario_id" name="comentario_id" value="{{comentario_id}}"><br>
         <input type="hidden" id="act_id" name="act_id" value="{{act_id}}"><br>
+
+        {% if error_message %}
+            <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+        
+        {% if success_message %}
+            <div class="success-message">{{ success_message }}</div>
+        {% endif %}
 
         
         <button type="submit" class="boton-guardar-cambios">Guardar Cambios</button>

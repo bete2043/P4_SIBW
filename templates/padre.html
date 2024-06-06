@@ -4,8 +4,9 @@
             {% block titulo %}
 
             <p>Parte del titulo y enlaces</p>
-
+		
             {% endblock %}
+            <script src="actividad.js"></script>
         
         </head>
 
@@ -23,29 +24,71 @@
         <!-- Botón para mostrar el formulario de inicio de sesión -->
         {% if info['usuario_iniciado'] == false %}
             <div class="inicio-sesion">
-                <form action="login.php">
-                    <button type="submit">Iniciar Sesión</button>
-                </form>
+                <a href="login.php">
+		    <img src="../imagenes/usuario.png" height="30" width="30" alt="Modificar datos">
+		</a>
             </div>
         {% endif %}
 
+    <div class="columna">
         {% if info['usuario_iniciado'] %}
 
     <div class="modificarsalir">
-        <form action="modificar.php">
-            <button type="submit">Modificar datos</button>
-        </form>
+        <a href="modificar.php">
+	    <img src="../imagenes/modificar.png" height="30" width="30" alt="Modificar datos">
+	</a>
         
-        <form action="logout.php">
-            <button type="submit">Cerrar Sesion</button>
-        </form>
+        <a href="logout.php">
+	    <img src="../imagenes/cerrar-sesion.png" height="30" width="30" alt="Cerrar Sesión">
+	</a>
+
     </div>
     
     {% endif %}
+        
+{% if (info['rol'] == 'gestor' or info['rol'] == 'super' or info['rol'] == 'moderador') and info['usuario_iniciado'] %}
+   <div class="opciones">
+    <button onclick="toggleExtensible('opciones')">Gestión de opciones</button>
+    <div class="extensible hidden">
+        {% if info['rol'] == 'super' %}
 
+                <form action="roles.php">
+                    <button type="submit">Modificar roles</button>
+                </form>
 
-    
-        {% if info['usuario_iniciado'] %}
+        {% endif %}
+        {% if info['rol'] == 'moderador' or info['rol'] == 'super' %}
+
+                <form action="comentario.php">
+                    <button type="submit">Leer comentarios</button>
+                </form>
+
+        {% endif %}
+        {% if info['rol'] == 'gestor' or info['rol'] == 'super' %}
+
+                <form action="gestor.php">
+                    <button type="submit">Añadir actividades</button>
+                </form>
+                <form action="eliminar_actividad.php">
+                    <button type="submit">Eliminar actividades</button>
+                </form>
+                <form action="editar_actividad.php">
+                    <button type="submit">Editar actividades</button>
+                </form>
+                <form action="actividades.php">
+                    <button type="submit">Mostrar actividades</button>
+                </form>
+                <form action="fotos.php">
+                    <button type="submit">Fotos de actividades</button>
+                </form>
+
+        {% endif %}
+    </div>
+</div>
+    {% endif %}
+</div>
+
+{% if info['usuario_iniciado'] %}
         <div class="usuario">
             <strong>Usuario: {{ info['username']}}</strong>
             <strong>Rol: {{ info['rol']}}</strong> 
@@ -55,50 +98,15 @@
             <strong>Anonimo</strong>
         </div>
         {% endif %}
-    
-    {% if info['rol'] == 'super' %}
-        <div class="modroles">
-            <form action="roles.php">
-                <button type="submit">Modificar roles</button>
-            </form>
-        </div>
-    {% endif %}
-
-    {% if info['rol'] == 'moderador' %}
-        <div class="leercoment">
-            <form action="comentario.php">
-                <button type="submit">Leer comentarios</button>
-            </form>
-        </div>
-
-    {% endif %}
-
-    {% if info['rol'] == 'gestor' %}
-
-        <div class="gestor">
-            <form action="gestor.php">
-                <button type="submit">Añadir actividades</button>
-            </form>
-            
-            <form action="eliminar_actividad.php">
-                <button type="submit">Eliminar actividades</button>
-            </form>
-        
-            <form action="editar_actividad.php">
-                <button type="submit">Editar actividades</button>
-            </form>
-        
-            <form action="actividades.php">
-                <button type="submit">Mostrar actividades</button>
-            </form>
-        </div>
-        
-
-    {% endif %}
-
-
 
     </div>    
+
+	<script>
+	    function toggleExtensible(elementId) {
+		var extensible = document.querySelector("." + elementId + " .extensible");
+		extensible.classList.toggle("active");
+	    }
+	</script>
 
     <body>
     {% block cuerpo %}
@@ -130,3 +138,4 @@
 
 </body>
 </html>
+

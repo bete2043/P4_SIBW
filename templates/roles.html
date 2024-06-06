@@ -9,18 +9,6 @@
 <body>
     <h1 class="titulo-modificar-rol">Modificar Rol de Usuario</h1>
 
-    {% if error_message %}
-        <div class="mensaje-error">
-            <p>{{ error_message }}</p>
-        </div>
-    {% endif %}
-
-    {% if success_message %}
-        <div class="mensaje-exito">
-            <p>{{ success_message }}</p>
-        </div>
-    {% endif %}
-
     <table class="tabla-usuarios">
         <thead>
             <tr>
@@ -51,8 +39,22 @@
                 <option value="{{ rol }}">{{ rol }}</option>
             {% endfor %}
         </select>
+
+        {% if error_message %}
+            <div class="mensaje-error">
+                <p>{{ error_message }}</p>
+            </div>
+        {% endif %}
+
+        {% if success_message %}
+            <div class="mensaje-exito">
+                <p>{{ success_message }}</p>
+            </div>
+        {% endif %}
         
         <button type="submit" class="boton-actualizar-rol">Actualizar Rol</button>
+        <a href="portada.php" class="boton-cerrar">Cerrar</a> 
+
     </form>
 </body>
 </html>

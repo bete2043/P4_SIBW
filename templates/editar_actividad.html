@@ -10,12 +10,6 @@
         <div class="inicio-sesion">
             <h2 class="form-title">Editar actividad</h2>
 
-            {% if error_message %}
-            <div class="error-message">
-                {{ error_message }}
-            </div>
-            {% endif %}
-
             <form class="form" action="editar_actividad.php" method="post">
 
                 <label class="form-label" for="actividad">Nombre de la actividad a editar:</label>
@@ -50,7 +44,20 @@
                 <label class="form-label" for="id">Id de la actividad:</label>
                 <input class="form-input" type="text" id="id" name="id" required>
 
+                {% if error_message %}
+                    <div class="mensaje-error">
+                        <p>{{ error_message }}</p>
+                    </div>
+                {% endif %}
+
+                {% if success_message %}
+                    <div class="mensaje-exito">
+                        <p>{{ success_message }}</p>
+                    </div>
+                {% endif %}
+
                 <button class="form-button" type="submit">Guardar Actividad</button>
+                <a href="portada.php" class="boton-cerrar">Cerrar</a> 
             </form>
         </div>
     </div>

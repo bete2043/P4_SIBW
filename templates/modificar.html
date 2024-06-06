@@ -12,12 +12,6 @@
         <div class="inicio-sesion">
             <h2 class="titulo-modificar-datos">Modificar Datos</h2>
 
-            {% if error_message %}
-            <div class="mensaje-error">
-                {{ error_message }}
-            </div>
-            {% endif %}
-
             <form action="modificar.php" method="post" class="form-modificar-datos">
                 <p class="info-usuario">Usuario: {{nombre}}</p>
 
@@ -32,7 +26,21 @@
                 <label for="gmail" class="label-gmail">Correo:</label>
                 <input type="gmail" id="gmail" name="gmail" required class="input-gmail">
 
+                {% if error_message %}
+                    <div class="mensaje-error">
+                        <p>{{ error_message }}</p>
+                    </div>
+                {% endif %}
+
+                {% if success_message %}
+                    <div class="mensaje-exito">
+                        <p>{{ success_message }}</p>
+                    </div>
+                {% endif %}
+
                 <button type="submit" class="boton-guardar-cambios">Guardar Cambios</button>
+                <a href="portada.php" class="boton-cerrar">Cerrar</a> <!-- Botón para cerrar el formulario -->
+
             </form>
         </div>
     </div>

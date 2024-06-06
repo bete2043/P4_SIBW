@@ -16,10 +16,17 @@
                 <input type="text" id="username" name="username" required class="input-username">
                 <label for="password" class="label-password">Contraseña:</label>
                 <input type="password" id="password" name="password" required class="input-password">
+
+                {% if error_message %}
+                    <div class="mensaje-error">
+                        <p>{{ error_message }}</p>
+                    </div>
+                {% endif %}
+
                 <button type="submit" class="boton-iniciar-sesion">Iniciar sesión</button>
             </form>
             <p class="mensaje-registro">¿No tienes una cuenta? <a href="registro.php" class="enlace-registro">Regístrate aquí</a></p>
-            <a href="portada.php" class="boton-cerrar">Cerrar</a> <!-- Botón para cerrar el formulario -->
+            <a href="portada.php" class="boton-cerrar">Cerrar</a> 
         </div>
     </div>
 

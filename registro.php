@@ -7,6 +7,9 @@ $twig=new \Twig\Environment($loader);
 
 session_start();
 
+$error_message = '';
+$success_message = '';
+
 // Verificar si se ha enviado el formulario de registro
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar y limpiar los datos del formulario
@@ -40,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($conn->query($sql) === TRUE) {
                 // Redirigir al usuario a una página de éxito
-                header("Location: portada.php");
+                $success_message = "Usuario registrado correctamente: " . $conn->error;
                 exit();
             } else {
                 $error_message = "Error al registrar el usuario: " . $conn->error;
@@ -54,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-echo $twig->render('registro.html',[]);
+echo $twig->render('registro.html',['error_message' => $error_message,
+'success_message' => $success_message]);
 
 ?>

@@ -11,12 +11,6 @@
         <div class="inicio-sesion">
             <h2 class="formulario-titulo">Añadir actividad</h2>
 
-            {% if error_message %}
-            <div class="error-mensaje">
-                {{ error_message }}
-            </div>
-            {% endif %}
-
             <form action="gestor.php" method="post" class="formulario">
                 <p class="formulario-instruccion">Introduzca los nuevos datos</p>
 
@@ -50,7 +44,21 @@
                 <label for="id" class="formulario-label">Id de la actividad:</label>
                 <input type="text" id="id" name="id" required class="formulario-input">
 
-                <button type="submit" class="formulario-button">Guardar Actividad</button>
+                {% if error_message %}
+                    <div class="mensaje-error">
+                        <p>{{ error_message }}</p>
+                    </div>
+                {% endif %}
+
+                {% if success_message %}
+                    <div class="mensaje-exito">
+                        <p>{{ success_message }}</p>
+                    </div>
+                {% endif %}
+
+                <p><button type="submit" class="formulario-button">Guardar Actividad</button>
+                <a href="portada.php" class="boton-cerrar">Cerrar</a> </p>
+
             </form>
         </div>
     </div>

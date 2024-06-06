@@ -20,7 +20,21 @@
             <label class="form-label" for="gmail">Gmail:</label>
             <input class="form-input" type="email" id="gmail" name="gmail" required>
 
+            {% if error_message %}
+                <div class="mensaje-error">
+                    <p>{{ error_message }}</p>
+                </div>
+            {% endif %}
+
+            {% if success_message %}
+                <div class="mensaje-exito">
+                    <p>{{ success_message }}</p>
+                </div>
+            {% endif %}
+
             <button class="form-button" type="submit">Registrarse</button>
+            <a href="portada.php" class="boton-cerrar">Cerrar</a> <!-- Botón para cerrar el formulario -->
+
         </form>
     </div>
 </body>

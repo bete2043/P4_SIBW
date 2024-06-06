@@ -64,22 +64,23 @@
                                                 <em>Mensaje editado por el moderador</em>
                                             {% endif %}
                                         </div>
-
-                                        <form action="editar_comentario.php" method="POST" style="display: inline;">
-                                            <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
-                                            <input type="hidden" name="act_id" value="{{idEv}}">
-                                            <button type="submit">
-                                                <img src="../imagenes/editar.png" width="30" height="30" alt="Editar comentario">
-                                            </button>
-                                        </form>
-                                        
-                                        <form action="borrar_comentario.php" method="POST" style="display: inline;">
-                                            <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
-                                            <input type="hidden" name="act_id" value="{{idEv}}">
-                                            <button type="submit">
-                                                <img src="../imagenes/eliminar.png" width="30" height="30" alt="Eliminar comentario">
-                                            </button>
-                                        </form>
+                                        {% if info['rol'] == 'moderador' or  info['rol'] == 'super' %}
+                                            <form action="editar_comentario.php" method="POST" style="display: inline;">
+                                                <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
+                                                <input type="hidden" name="act_id" value="{{idEv}}">
+                                                <button type="submit">
+                                                    <img src="../imagenes/editar.png" width="30" height="30" alt="Editar comentario">
+                                                </button>
+                                            </form>
+                                            
+                                            <form action="borrar_comentario.php" method="POST" style="display: inline;">
+                                                <input type="hidden" name="comentario_id" value="{{comentario['id']}}">
+                                                <input type="hidden" name="act_id" value="{{idEv}}">
+                                                <button type="submit">
+                                                    <img src="../imagenes/eliminar.png" width="30" height="30" alt="Eliminar comentario">
+                                                </button>
+                                            </form>
+                                        {% endif %}
 
                                     </div>
                                 {% endfor %}
@@ -96,6 +97,7 @@
                                     <button type="submit"><img src="../imagenes/enviar.png" id="env"></button>
                                 </form>
                             </div>
+                            
                         </div>
                     {% endif %}
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="../css/paginas.css">
+</head>
+<body>
+    <div class="container1">
+        <h1>Galería de Imágenes</h1>
+
+        <div class="gallery-container">
+            <div class="gallery">
+                {% if imagenes is not empty %}
+                    {% for imagen in imagenes %}
+                        <div class="gallery-item">
+                            <img src="{{ imagen.image_path }}" alt="Imagen"/>
+                            <p>#{{ imagen.hashtag }}</p>
+                            <a href="borrar_imagen.php?id={{ imagen.id }}">Borrar</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay imágenes para mostrar.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <a href="fotos.php">Volver a subir imágenes</a>
+    </div>
+</body>
+</html>
+
