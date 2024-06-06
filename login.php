@@ -6,6 +6,7 @@ $twig = new \Twig\Environment($loader);
 require_once 'bd.php';
 
 session_start();
+$error_message ='';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nick = $_POST['username'];
@@ -20,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: portada.php");
         exit();
     } else {
-        echo "Nombre de usuario o contraseña incorrectos";
+        $error_message = "Nombre de usuario o contraseña incorrectos";
     }
 }
 
-echo $twig->render('login.html', []);
+echo $twig->render('login.html', ['error_message' =>$error_message]);
 ?>

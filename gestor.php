@@ -12,6 +12,9 @@ ob_end_clean();
 // Crear una conexión con la base de datos
 $conn = new mysqli("lamp-mysql8", "jaime", "jaime", "SIBW");
 
+$error_message = '';
+$success_message = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar y limpiar los datos del formulario
     $precio =$_POST["precio"];
@@ -44,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if ($stmt->execute()) {
             // Redirigir al usuario a una página de éxito
-            header("Location: portada.php");
+            $success_message = "Actividad añadida correctamente.";
         } else {
             $error_message = "Error al añadir la actividad: " . $stmt->error;
         }
@@ -58,5 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $conn->close();
 
-echo $twig->render('gestor.html', ['error_message' => $error_message ?? '']);
+echo $twig->render('gestor.html', [ 'error_message' => $error_message,
+'success_message' => $success_message]);
 ?>

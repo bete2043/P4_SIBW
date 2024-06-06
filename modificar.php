@@ -15,6 +15,7 @@ $conn = new mysqli("lamp-mysql8", "jaime", "jaime", "SIBW");
 $nombre = $_SESSION['username'];
 
 $error_message = '';
+$success_message = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar y limpiar los datos del formulario
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Actualizar la sesión con el nuevo nombre de usuario si ha cambiado
         $_SESSION['username'] = $username;
         // Redirigir al usuario a una página de éxito
-        header("Location: portada.php");
+        $success_message = "Datos personales modificados correctamente.";
     } else {
         $error_message = "Error al modificar los datos del usuario: " . $stmt->error;
     }
@@ -50,5 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $conn->close();
 
-echo $twig->render('modificar.html', ['nombre' => $nombre, 'error_message' => $error_message ?? '']);
+echo $twig->render('modificar.html', ['nombre' => $nombre, 'error_message' => $error_message,
+'success_message' => $success_message]);
 ?>
