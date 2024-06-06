@@ -46,6 +46,9 @@ $mysqli = new mysqli("lamp-mysql8", "jaime", "jaime", "SIBW");
         echo ("Fallo al conectar: " . $mysqli->connect_error);
     }
 
+    $error_message = '';
+$success_message = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];

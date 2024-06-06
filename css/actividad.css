@@ -21,6 +21,59 @@ body {
     background: linear-gradient(#185605, #7CF758); /* Fondo gradiente verde */                  
 }
 
+.opciones button {
+    padding: 6px 12px; /* Reducir el padding para hacer los botones más pequeños */
+    background-color: #bbf0ec;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px; /* Reducir el tamaño de la fuente */
+    margin: 5px; /* Reducir el margen entre los botones */
+}
+
+.opciones button:hover {
+    background-color: #97d7ce;
+}
+
+
+.modificarsalir {
+        display: flex;
+        align-items: center; /* Centra verticalmente los elementos */
+    }
+    
+.extensible {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+        position: absolute;
+        z-index: 9999;
+}
+
+
+    .extensible.active {
+        max-height: 500px; /* Altura máxima cuando se muestra */
+        display: block;
+    }
+.opciones {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar elementos horizontalmente */
+        justify-content: center; /* Centrar elementos verticalmente */
+        position: relative;
+      	display: inline-block; /* Para centrar el botón */
+
+    }
+	
+	.columna{
+	display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar elementos horizontalmente */
+        justify-content: center; /* Centrar elementos verticalmente */
+    }
+	
+
+
 .box img {
     margin-right: 10px; /* Margen derecho de 10px para imágenes dentro de .box */
 }
@@ -135,6 +188,7 @@ button {
     margin: 10px auto; /* Reducir el margen */
     padding: 10px; /* Aumentar el padding */
     height: 100px;
+    width:  auto;
     border-radius: 10px; /* Bordes redondeados */
     background-color: #8d683d;
     border: 2px solid #000;
@@ -151,7 +205,8 @@ button {
 }
 
 .inicio-sesion {
-    display: inline-block;
+    display: flex;
+     align-items: center;
 }
 
 .inicio-sesion button {
@@ -234,11 +289,13 @@ button {
     font-size: 14px;
     margin: 2px;
     margin-left: 30px;
+
 }
 
 .gestor button:hover {
     background-color: #97d7ce;
 }
+modroles
 
 .modroles {
     display: inline-block;
@@ -253,7 +310,7 @@ button {
     width: 160px;
     cursor: pointer;
     font-size: 14px;
-    margin: 30px;
+    margin: 10px;
     margin-top: 50px;
 }
 

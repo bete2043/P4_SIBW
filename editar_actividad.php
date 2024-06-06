@@ -8,6 +8,9 @@ require_once 'bd.php';
 ob_start(); 
 include 'login.php';
 ob_end_clean(); 
+$success_message = '';
+$error_message = '';
+
 
 // Crear una conexión con la base de datos
 $conn = new mysqli("lamp-mysql8", "jaime", "jaime", "SIBW");
@@ -44,19 +47,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt1 = $conn->prepare("UPDATE fotos SET ruta = ?, ruta2 = ? WHERE actividad_id = ?");
         $stmt1->bind_param("ssi", $foto1, $foto2, $actividad_id);
         $stmt1->execute();
-
+        $stmt->close();
+    $stmt1->close();
         // Redirigir al usuario a una página de éxito
-        header("Location: portada.php");
-        exit;
+        $success_message = "Actividad editada con exito.";
     } else {
         $error_message = "No se encontró la actividad.";
     }
 
-    $stmt->close();
-    $stmt1->close();
+    
 }
         
 $conn->close();
 
-echo $twig->render('editar_actividad.html', ['error_message' => $error_message ?? '']);
+echo $twig->render('editar_actividad.html', ['error_message' => $error_message,
+'success_message' => $success_message]);
 ?>

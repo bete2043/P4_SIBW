@@ -15,9 +15,9 @@ if ($conn->connect_error) {
 $query = isset($_GET['query']) ? '%' . $conn->real_escape_string($_GET['query']) . '%' : '';
 
 if ($query) {
-    $sql = "SELECT * FROM actividad WHERE actividad LIKE ? OR descripcion LIKE ?";
+    $sql = "SELECT * FROM actividad WHERE actividad LIKE ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $query, $query);
+    $stmt->bind_param("s", $query);
 } else {
     $sql = "SELECT * FROM actividad";
     $stmt = $conn->prepare($sql);

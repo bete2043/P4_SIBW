@@ -62,7 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("si", $texto , $comentario_id);
 
         if ($stmt->execute()) {
-            header("Location: actividad.php?ev=$act_id");
+            $success_message = "Comentario editado con exito.";
+
         } else {
             $error_message = "Error al actualizar el comentario: " . $stmt->error;
         }

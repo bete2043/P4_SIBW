@@ -711,8 +711,140 @@
 .form-button:hover {
     background-color: #0056b3;
 }
+.botones{
+    margin: 20px;
+}
 
 
 /* /////////////////////////////////////////////////////////////// */
 /* FIN registro.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*fotos.html*/
+/* subir una foto desde el ordenador */
+/* /////////////////////////////////////////////////////////////// */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px); /* Resta el padding y el borde */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"], button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block; /* Para que los botones estén en línea */
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #005f6b;
+}
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN fotos.html*/
+/* /////////////////////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////////////////// */
+/*galeria.html*/
+/* ver todas las fotos subidas*/
+/* /////////////////////////////////////////////////////////////// */
+
+.container1 {
+    text-align: center;
+    padding: 20px;
+    width: 90%; /* Hacemos que el contenedor sea un poco más ancho */
+    max-width: 1200px; /* Establecemos un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centramos el contenedor horizontalmente */
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.gallery-container {
+    overflow-y: auto; /* Agregamos desplazamiento vertical cuando el contenido excede el tamaño del contenedor */
+    max-height: 60vh; /* Altura máxima para el contenedor de la galería */
+    margin-bottom: 20px; /* Espacio entre la galería y el enlace */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las imágenes */
+}
+
+.gallery-item {
+    width: calc(33.33% - 20px); /* Para que haya tres imágenes por fila */
+    margin: 10px;
+}
+
+.gallery-item img {
+    width: 100%; /* Ajustamos el tamaño de las imágenes al 100% del contenedor */
+    height: auto; /* Permitimos que la altura de la imagen se ajuste automáticamente */
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.gallery-item p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #008CBA;
+}
+
+a:hover {
+    color: #005f6b;
+}
+
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* FIN galeria.html*/
 /* /////////////////////////////////////////////////////////////// */

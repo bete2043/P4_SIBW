@@ -25,7 +25,6 @@ $id1 = $_POST['act_id'];
 
     if ($stmt->execute()) {
         header("Location: actividad.php?ev=$id1");
-        echo  "Comentario borrado con exito ";
         exit();
     } else {
         echo  "Error al borrar el comentario: " . $stmt->error;

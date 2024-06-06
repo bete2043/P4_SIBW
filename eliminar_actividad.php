@@ -8,6 +8,9 @@ require_once 'bd.php';
 // Crear una conexión con la base de datos
 $conn = new mysqli("lamp-mysql8", "jaime", "jaime", "SIBW");
 
+$error_message = '';
+$success_message = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar y limpiar los datos del formulario
     $nombre =$_POST["nombre"];
@@ -39,8 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt2->close();
 
             // Redirigir al usuario a una página de éxito
-            header("Location: portada.php");
-            exit;
+            $success_message = "Se elimino la actividad con exito.";
         } else {
             $error_message = "No se encontró la actividad.";
         }
@@ -50,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $conn->close();
 
-echo $twig->render('eliminar_actividad.html', ['error_message' => $error_message ?? '']);
+echo $twig->render('eliminar_actividad.html', ['error_message' => $error_message,
+'success_message' => $success_message]);
 
 
 ?>
